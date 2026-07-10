@@ -3,16 +3,16 @@ openapi: 3.0.0
 info:
   title: LearnMate API
   version: 1.0.0
-  description: API for analyzing GitHub and LeetCode profiles.
+  description: API for analyzing a student's GitHub and LeetCode profile.
 
 servers:
   - url: https://learnmate-eiej.onrender.com
 
 paths:
-
   /analyze-profile:
     post:
       summary: Analyze a student's coding profile
+      description: Retrieves GitHub and LeetCode information and returns a coding profile analysis.
       operationId: analyzeProfile
 
       requestBody:
@@ -21,12 +21,48 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - github
+                - leetcode
               properties:
                 github:
                   type: string
+                  description: Public GitHub username
+                  example: octocat
                 leetcode:
                   type: string
+                  description: Public LeetCode username
+                  example: tourist
 
       responses:
         "200":
-          description: Analysis successful
+          description: Analysis completed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  careerGoal:
+                    type: string
+                  github:
+                    type: object
+                  leetcode:
+                    type: object
+                  strengths:
+                    type: array
+                    items:
+                      type: string
+                  weakAreas:
+                    type: array
+                    items:
+                      type: string
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+
+        "400":
+          description: Invalid request
+
+        "500":
+          description: Internal server error
