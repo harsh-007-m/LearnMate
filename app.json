@@ -1,0 +1,20 @@
+{
+  "name": "LearnMate",
+  "description": "An AI-powered personalized learning assistant built using IBM watsonx Orchestrate, GitHub API, LeetCode API, Node.js, Express.js, and React. LearnMate analyzes a student's skills, coding profile, and career goals to generate a personalized learning roadmap.",
+  "repository": "https://github.com/YOUR_GITHUB_USERNAME/LearnMate",
+  "logo": "",
+  "keywords": [
+    "IBM",
+    "watsonx",
+    "orchestrate",
+    "AI",
+    "education",
+    "learning",
+    "roadmap",
+    "github",
+    "leetcode",
+    "nodejs",
+    "react"
+  ],
+  "env": {}
+}
